@@ -6,7 +6,7 @@ from lxml import etree
 
 
 
-class ProductApproval(models.Model):
+class ProductTemplate(models.Model):
     _inherit = "product.template"
     
     state = fields.Selection([('draft', 'Draft'), ('approve', 'Approve')], string='Status', readonly=True, index=True, copy=False, tracking=True, default='draft')
@@ -18,7 +18,7 @@ class ProductApproval(models.Model):
 
     @api.model
     def get_view(self, view_id=None, view_type=False, **options):
-        result = super(ProductApproval, self).get_view(view_id=view_id, view_type=view_type, **options)
+        result = super(ProductTemplate, self).get_view(view_id=view_id, view_type=view_type, **options)
         doc = etree.XML(result['arch'])
         if view_type == 'form':
             for node in doc.xpath("//field"):
