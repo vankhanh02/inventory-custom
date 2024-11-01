@@ -7,7 +7,7 @@ from lxml import etree
 
 
 class ProductApproval(models.Model):
-    _inherit = "product.approval"
+    _inherit = "product.template"
     
     state = fields.Selection([('draft', 'Draft'), ('approve', 'Approve')], string='Status', readonly=True, index=True, copy=False, tracking=True, default='draft')
 

@@ -1,6 +1,6 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
    <record id="group_type_user_res" model="res.groups">
-      <field name="name">tory Manager</field>
+      <field name="name">Inventory Manager</field>
    </record>
 </odoo>
